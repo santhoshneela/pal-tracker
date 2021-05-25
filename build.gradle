@@ -9,5 +9,23 @@ repositories {
 }
 
 dependencies {
+    //mvc app
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    //for tests
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+// for unit 5 tests
+test {
+    useJUnitPlatform()
+}
+
+//Adding environment variable to local run
+bootRun.environment([
+        "WELCOME_MESSAGE": "howdy",
+])
+
+//dding environment variable to tests
+test.environment([
+        "WELCOME_MESSAGE": "Hello from test",
+])
